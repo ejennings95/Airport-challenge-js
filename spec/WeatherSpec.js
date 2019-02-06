@@ -1,1 +1,1 @@
-var Weather = require('../../src/Weather.js')
+var Weather = require('../src/Weather.js')

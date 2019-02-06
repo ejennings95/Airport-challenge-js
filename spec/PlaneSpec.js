@@ -1,1 +1,1 @@
-var Plane = require('../../src/Plane.js')
+var Plane = require('../src/Plane.js')
