@@ -19,4 +19,9 @@ describe("Airport Challenge", function() {
     expect(gatwick.takeOff(ma01)).toEqual(ma01);
     expect(gatwick.hangar()).not.toContain(ma01);
   });
+
+  it("Should not be able to instruct a plane to take off from an airport if it is already flying", function(){
+    gatwick.takeOff(ma01)
+    expect(function() {gatwick.takeOff(ma01);} ).toThrow(new Error("Already flying"));
+  });
 });

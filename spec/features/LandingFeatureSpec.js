@@ -21,4 +21,9 @@ describe("Airport Challenge", function() {
     gatwick.land(ma01);
     expect(gatwick.land(ma02)).toEqual([ma01,ma02]);
   });
+
+  it("Should throw an error when you try land a plane already landed", function() {
+    gatwick.land(ma01);
+    expect(function() {gatwick.land(ma01);} ).toThrow(new Error("Already landed"));
+  });
 });
