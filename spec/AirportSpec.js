@@ -20,4 +20,10 @@ describe("Airport", function() {
     gatwick.land(ma01);
     expect(gatwick.land(ma02)).toEqual([ma01,ma02]);
   });
+
+  it("Should be able to instruct a plane to take off from an airport", function(){
+    gatwick.land(ma01);
+    expect(gatwick.takeOff(ma01)).toEqual(ma01);
+    expect(gatwick.hangar()).not.toContain(ma01);
+  });
 });

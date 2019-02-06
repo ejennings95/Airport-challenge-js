@@ -11,4 +11,10 @@ Airport.prototype.land = function(plane){
   return this.hangar();
 };
 
+Airport.prototype.takeOff = function(plane){
+  var index = this._hangar.indexOf(plane);
+  this._hangar.splice(index);
+  return plane;
+};
+
 module.exports = Airport
