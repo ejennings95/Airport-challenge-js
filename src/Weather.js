@@ -1,9 +1,10 @@
 function Weather() {
-  this._sunnyWeather = true;
+  this._condition = "sunny";
 };
 
 Weather.prototype.status = function(){
-  return this._sunnyWeather;
+  this.check()
+  return this._condition;
 };
 
 Weather.prototype.randomGenerator = function() {
@@ -11,10 +12,10 @@ Weather.prototype.randomGenerator = function() {
 };
 
 Weather.prototype.check = function() {
-  if (this.randomGenerator() > 8) {
-    this._sunnyWeather = false
+  if (this.randomGenerator() >= 8) {
+    this._condition = "stormy"
   } else {
-    this._sunnyWeather = true
+    this._condition = "sunny"
   };
 };
 

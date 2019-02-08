@@ -12,15 +12,13 @@ describe("Weather", function() {
     expect(weather.randomGenerator()).toBeLessThan(11);
   });
 
-  it("Should return false to sunnyWeather", function(){
+  it("Should return stormy when weather condition is called", function(){
     spyOn(Math, 'random').and.returnValue(0.9);
-    weather.check()
-    expect(weather.status()).toEqual(false);
+    expect(weather.status()).toEqual("stormy");
   });
 
-  it("Should return true to sunnyWeather", function(){
+  it("Should return sunny when weather condition is called", function(){
     spyOn(Math, 'random').and.returnValue(0.2);
-    weather.check()
-    expect(weather.status()).toEqual(true);
+    expect(weather.status()).toEqual("sunny");
   });
 });
